@@ -42,19 +42,21 @@
 <main id="index-main">
 <div class="container">
 	<div class="row section" id="personal-info"> 
-		<div class="col-3" id="index-figure">
+		<div class="col col-lg-3 col-md-4 col-sm-5 col-5" id="index-figure">
 			<div class="row"> 
 				<img src="./static/img/Myhead.png" alt="Jiabo.Xu"/>
 			</div>
 			<div class="row" id='contact-info'> 
-				<ul>
-					<li> Email: <a href="mailto:jiabo.xu@foxmail.com" style="color:black">jiabo.xu@foxmail.com</a></li>
-					<li> Phone: (+86)13153020135</li>		
-					<li> Address: Jinan, Shandong, China</li>						
-				</ul>
+				<div class="col" style="font-size:0.9em;">
+					<ul>
+						<li> Email: <a href="mailto:jiabo.xu@foxmail.com" style="color:black">jiabo.xu@foxmail.com</a></li>
+						<li> Phone: (+86)13153020135</li>		
+						<li> Address: Jinan, Shandong, China</li>						
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="col-9" id="index-introduction">
+		<div class="col col-lg-9 col-md-auto col-sm-auto col-auto" id="index-introduction">
 			<div class="row"> 
 				<p> My Master degree is in Computer Science, speciallizing in AI, from the Australia National University. During my student career, I have done research in Data61, CSIRO for around 9 months. At that time, I focused on research in Computer Vision, especially generative models. My Bachelor of Computing degree is from Macao Polytechnic Institute. When I was year-4, I served as the student group leader in CBE Machine Translation Laboratory, focusing on Text Mining and website development.</p>
 				<p> My research passion is on connecting Large-Scale 3D Modeling with GANs. Besides, I am also willing to study other Computer Vision problems, as I believe any single task cannot solve problems in the actual world. I have research experiences in Medical Image, Generative Adversarial Networks, Domain Adaptation and Video-to-video Translation. To achieve this, I am also learning important works of Large-Scale 3D Modeling. </p>
@@ -91,20 +93,20 @@
 				<hr style="width:100%">
 			</div>
 			<div class="row"> 
-				<div class="col-3">
-					<div class="row"> 
+				<div class="col col-lg-4 col-md-4 col-sm-5 col-5">
+					<div class="row publication-figure"> 
 						<img src="./static/img/OfGAN.png" alt="OfGAN"/>
 					</div>
-					<div class="row"> 
-						<p><a href="./static/paper719.pdf"><button type="button" class="btn btn-secondary">paper</button></a> <a href="./contents/project/OfGAN.html"><button type="button" class="btn btn-secondary">project</button></a></p>
+					<div class="row publication-link"> 
+						<p><a href="./static/paper719.pdf"><button type="button" class="btn btn-light">[paper]</button></a> <a href="./contents/project/OfGAN.html"><button type="button" class="btn btn-light">[project]</button></a></p>
 					</div>	
 				</div>
-				<div class="col-9">
+				<div class="col col-lg-8 col-md-auto col-sm-auto col-auto">
 					<div class="row"> 
 						<p><b>Xu, J., Anwar S., Barnes N., Grimpen, F., Salvado, O., Anderson, S. Mohammad, A. (2020).  In International Conference on Medical image computing and computer-assisted intervention(MICCAI)</b></p>
 						<div class="abstract">
 							<p class="abstract" id="abstract"><i>Abstract:</i> Data-driven methods usually require a large amount of labelled data for training and generalization, especially in medical imaging. Targeting the colonoscopy ﬁeld, we develop the Optical Flow Generative Adversarial Network (OfGAN) to transform simulated colonoscopy videos into realistic ones while preserving annotation. The advantages of our method are three-fold: the transformed videos are visually much more realistic; the annotation, such as optical ﬂow of the source video is preserved in the transformed video, and it is robust to noise. The model uses a cycle-consistent structure and optical ﬂow for both spatial and temporal consistency via adversarial training. We demonstrate that the performance of our OfGAN overwhelms the baseline method in relative tasks through both qualitative and quantitative evaluation.</p>
-							<button type="button" class="btn btn-secondary" id='read-more' onclick="show(this) ">More</button>
+							<button type="button" class="btn btn-light" id='read-more' onclick="show(this) ">More</button>
 						</div>
 					</div>
 				</div>
