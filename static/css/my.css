@@ -1,0 +1,130 @@
+/* overall setting */
+body {
+	font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
+	border:0;
+	padding:0;
+}
+
+body.inner{
+	display: flex;
+	flex-direction: column;
+	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
+	border:0;
+	padding:0;
+}
+
+
+nav a:visited {
+	color: var(--a_color);
+}
+
+
+span.date{
+	font-family: Montserrat;
+	font-weight: 400;
+	font-size: 13px;
+	color: #999;
+}
+
+
+/* CSS for index.html */
+/* main content*/
+main#index-main{
+	padding-top: var(--nav-height);
+	margin-top: 50px;
+}
+.section{
+	margin-bottom: 30px;
+}
+div#index-figure{
+}
+div#index-figure img{
+	width: 100%;
+	margin-bottom: 20px;
+	margin-right: 30px;
+}
+div#index-introduction p{
+	font-size: 0.9em;
+}
+
+div#publication img{
+	width: 100%;
+}
+#contact-info{
+	margin-left: -40px;
+	font-size: 0.9em;
+}
+div#news{
+	flex-direction: column;
+}
+div#publication{
+	flex-direction: column;
+}
+div#news ul{
+	list-style-type:none;
+}
+button{
+	padding: 0 0 0 0 !important;
+}
+
+p.abstract{
+	margin-bottom: 5px;
+	word-break:break-all;
+	display:-webkit-box;/**对象作为伸缩盒子模型展示**/
+	-webkit-box-orient:vertical;/**设置或检索伸缩盒子对象的子元素的排列方式**/
+	-webkit-line-clamp:3;/**显示的行数**/
+	display:-moz-box;/**对象作为伸缩盒子模型展示**/
+	-moz-box-orient:vertical;/**设置或检索伸缩盒子对象的子元素的排列方式**/
+	-moz-line-clamp:3;/**显示的行数**/
+	overflow:hidden;/**隐藏超出的内容**/
+}
+
+
+
+
+/* CSS for '/content/*.html' */
+/* navigation bar*/
+/* nav bar overall setting*/
+nav.top {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0;
+	border: 0;
+	width: 100%;
+	height: var(--nav-height);
+	background-color: var(--nav_background_color);
+	position: fixed;
+	top: 0;
+	z-index:10;
+}
+
+nav.top a{
+	padding: 11px 16px;
+}
+
+/* link hover style (to override the overall setting)*/
+nav.top a:hover{
+	background-color: var(--nav_hover_color);
+	border-bottom: none;
+	text-decoration: none;
+}
+
+/* nav bar main menu (left part of it)*/
+nav.top ul{
+	display: flex;
+	margin:0;  /* this line is very important. there is a default bottom margin*/
+	list-style-type: none;
+}
+
+/* placeholder (right part of the nav bar) */
+nav.top div#placeholder{
+	flex-grow: 6;
+	display: flex;
+	justify-content: flex-end;
+}
+nav.top div#placeholder a:hover{
+	background-color: transparent;
+}
+
