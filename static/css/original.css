@@ -3,7 +3,10 @@
     --nav_hover_color: #EFEFEF;
     --a_color: black;
     --a_border_color: #0DD00D;
-
+	
+	--button-background-color: #444444;
+	--button-font-color: white;
+	
 	--nav-height: 40px;
 	
 	--margin-left: 20px;

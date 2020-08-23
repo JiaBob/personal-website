@@ -73,6 +73,13 @@ div#publication{
 	margin-left: var(--maring-left);
 	margin-right: var(--maring-right);
 }
+div#publication button{
+	padding: 0 5px 0 5px;
+	margin-top: 8px;
+}
+div#publication button#read-more{
+	margin-top: -8px;
+}
 .publication-figure {
 	margin-left: 20px;
 	margin-right: 40px;
@@ -82,8 +89,10 @@ div#publication{
 	margin-left:20px;
 	margin-right:40px;
 }
-button{
-	padding: 0 5px 0 5px !important;
+button {
+	background-color: var(--button-background-color) !important;
+	color: var(--button-font-color) !important;
+	padding: 1px 5px 1px 5px !important;
 }
 
 p.abstract{
@@ -98,16 +107,33 @@ p.abstract{
 	overflow:hidden;/**隐藏超出的内容**/
 }
 
-button{
-	padding: 0 5px 0 5px !important;
-}
+
 /* CSS for project detail */
 div#project div.paper-info{
 	display:flex;
 	justify-content: center;
 }
 div#project div.title{
-	margin-bottom: 40px;
+	margin-bottom: 15px;
+}
+div#project div.download-paper{
+	width:100%; 
+	display:flex; 
+	justify-content:center;
+	margin-bottom: 25px;
+}
+div#project div.download-paper button{
+	width:190px;
+	height: 35px;
+	padding: 1px 4px 1px 4px;
+}
+div#project div.download-paper button img{
+	width:8%;
+	position: relative;
+	top: -2.5px;
+	margin-top: 8px !important;
+	margin-bottom: 8px !important;
+	filter:Invert();
 }
 div#project div.author{
 	width:50%;
@@ -115,8 +141,10 @@ div#project div.author{
 div#project div.abstract{
 	width:60%;
 }
-div#project img{
+div#project img, div#project video{
 	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 
