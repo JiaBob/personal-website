@@ -98,10 +98,6 @@ p.abstract{
 	overflow:hidden;/**隐藏超出的内容**/
 }
 
-<<<<<<< HEAD
-
-
-=======
 button{
 	padding: 0 5px 0 5px !important;
 }
@@ -122,7 +118,7 @@ div#project div.abstract{
 div#project img{
 	margin: 0 auto;
 }
->>>>>>> 7575cca... finished project page
+
 
 /* CSS for '/content/*.html' */
 /* navigation bar*/
