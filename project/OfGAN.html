@@ -29,7 +29,7 @@
 <ul>
 <li><a href="../index.html">Home</a></li>
 <li><a href="../index.html#publication">Publication</a></li>
-<li><a href="../index.html#project">Project</a></li>
+<li><a href="../index.html#publication">Project</a></li>
 <li><a href="../index.html#presentation">Presentation</a></li>
 
 <!-- use href='#' to activate it and avoid refreshing page-->
@@ -84,9 +84,9 @@
 						<p> <b>Qualitative:</b> we use two datasets, our synthetic and real colonoscopy dataset and a <a href="http://cmic.cs.ucl.ac.uk/ColonoscopyDepth/">public CT dataset</a>(no GT optical flow). Based on our ablation study(from above gif), it is observable that adding optical flow lose successfully reduces the noise, but does not enhance the realism. Besides, only use temporal cycle structure makes the transformation even worse, as the training becomes much more harder.  Finally, from the vivid wall color and the smooth movement, we can conclude that our OfGAN works and performs much better on both domain transformation and temporal consistency.</p>
 						<p><b>Quantitative:</b> we have to double claim that spatial and temporal performance are indivisible. As a result, the spatial and temporal dimension must be considered simultaneously. An auxiliary metric, which combines several existing metrics (AEPEs, perceptual loss and style loss), are required. Moreover, we use EPE towards ground truth and predicted optical flow for measuring the temporal consistency, as the given synthetic video is consistent. We use perceptual loss and style loss for measuring the domain distance and spatial quality. More details please refer to our paper.</p>
 						<h4> Limitations</h4>
-						<p> To generate realism dataset, we only need to train our model once on the specific synthetic dataset. Then the model can generalize all output of the synthetic generator and transform them properly to real domain. However, as our target data type is video, we cannot ensure that all tranformed frames are successful (a very small amount of them may contains big white-spot). But once the flaw emerges, to still form a video, we have to cut it and spread it into two. As a result, generating high-quality very long video will be hard. Besides, we only verify the success of our model on two types of colonoscopy dataset, there are still a long trip to test the model.</p>
+						<p> To generate realism dataset, we only need to train our model once on the specific synthetic dataset. Then the model can generalize all output of the synthetic generator and transform them properly to the real domain. However, as our target data type is video, we cannot ensure that all tranformed frames are successful. A very small amount of them may contains big white-spot. But once the flaw emerges, to still form a video, we have to cut it and separate it into two. As a result, generating high-quality very long video will be hard. Besides, we only verify the success of our model on two types of colonoscopy dataset, there are still a long trip for verifying the model.</p>
 						<h4> Code</h4>
-						<p> The code is confidential due to CSIRO policy. But, as there is no novel network structure, it is easy to reimplement. Welcome to contact me if you have problems.</p>
+						<p> The code is confidential due to CSIRO policy. But, as no novel convolutional structures are created, it is easy to reimplement. Welcome to contact me if you have problems.</p>
 				</div>
 			</div>
 		</div>
