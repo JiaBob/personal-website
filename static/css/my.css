@@ -29,7 +29,7 @@ nav a:visited {
 
 /* CSS for index.html */
 /* main content*/
-main#index-main{
+main{
 	padding-top: var(--nav-height);
 	margin-top: 50px;
 }
@@ -98,8 +98,31 @@ p.abstract{
 	overflow:hidden;/**隐藏超出的内容**/
 }
 
+<<<<<<< HEAD
 
 
+=======
+button{
+	padding: 0 5px 0 5px !important;
+}
+/* CSS for project detail */
+div#project div.paper-info{
+	display:flex;
+	justify-content: center;
+}
+div#project div.title{
+	margin-bottom: 40px;
+}
+div#project div.author{
+	width:50%;
+}
+div#project div.abstract{
+	width:60%;
+}
+div#project img{
+	margin: 0 auto;
+}
+>>>>>>> 7575cca... finished project page
 
 /* CSS for '/content/*.html' */
 /* navigation bar*/

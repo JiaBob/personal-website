@@ -39,7 +39,7 @@
 </nav>
 <!-- /nav bar -->
 
-<main id="index-main">
+<main>
 <div class="container">
 	<div class="row section" id="personal-info"> 
 		<div class="col col-lg-3 col-md-4 col-sm-5 col-5" id="index-figure">
@@ -116,9 +116,27 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+	<div class="row section" id="presentation">
+		<div class='col-12'>
+			<div class="row" style="flex-direction:column">
+				<h3>Presentations</h3>
+				<hr style="width:100%">
+			</div>
+			<div class="row"> 
+				<ul>
+					<li> [2020/10] Presentation on MICCAI 2020 about our paper: "OfGAN: Realistic Rendition of Synthetic Colonoscopy Videos". <a href="javascript:void(0);"><button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Coming soon">Slides</button></a></li>
+					<li> [2019/12] Presentation on Data61, CSIRO reading group: "Introduction to video-to-video translation with Medical Image". <a href="./static/ReadingGroup_JiaboXu.ppf"><button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Pdf version no gif">Slides</button></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+>>>>>>> 7575cca... finished project page
 </div>
 </main>
 <script>
+	// for more and hide
 	function show(obj){
 		$('p#abstract').removeClass('abstract');
 		$('button#read-more').attr("onclick","hide(this)");
@@ -130,6 +148,11 @@
 		$('button#read-more').attr("onclick","show(this)");
 		$('button#read-more').text("More");
 	};
+	
+	// for tooltip
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
 </script>
 </body>
 </html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Jiabo(Bob) Xu</title>
+	<meta charset='utf-8'/>
+	<meta name="keyword" content="my site">
+	<link rel="icon" href="../static/img/icon_32.png" type="/image/x-icon" />
+
+	<!-- boostrap 4.5 -->
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+	<script src="../static/js/jquery.slim.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+	
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+    <!-- My own stuff-->
+    <link rel="stylesheet" type="text/css" href="../static/css/original.css"> <!-- global css variable pass to my.css -->
+	<link rel="stylesheet" type="text/css" href="../static/css/my.css"/>
+
+</head>
+<body>
+
+<!-- nav bar/ -->
+<nav class="top">
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../index.html#publication">Publication</a></li>
+<li><a href="../index.html#project">Project</a></li>
+<li><a href="../index.html#presentation">Presentation</a></li>
+
+<!-- use href='#' to activate it and avoid refreshing page-->
+</ul>
+<div id="placeholder">
+	<ul>
+		<li>
+			<a href="https://github.com/JiaBob" target="_blank"><img src="../static/img/GitHub-Mark-32px.png"></a>
+		</li>
+	</ul>
+
+</div>
+</nav>
+<!-- /nav bar -->
+
+<main>
+<div class='container'>
+	<div class='row'>
+		<div class='col' id='project'>
+			<div class='row paper-info'>
+				<div class='title'><h3>OfGAN: Realistic Rendition of Synthetic Colonoscopy Videos</h3><a href="../static/paper719.pdf"><button type="button" class="btn btn-light">[paper]</button></a></div>
+				<div class='author'><p style='text-align:center'>Jiabo Xu, Saeed Anwar, Nick Barnes, Florian Grimpen, Olivier Salvado, Stuart Anderson, and Mohammad Ali Armin</p></div>
+				
+				<div class='abstract'><p><b>Abstract.</b>Data-driven methods usually require a large amount of labelled data for training and generalization, especially in medical imaging. Targeting the colonoscopy ﬁeld, we develop the Optical Flow Generative Adversarial Network (OfGAN) to transform simulated colonoscopy videos into realistic ones while preserving annotation. The advantages of our method are three-fold: the transformed videos are visually much more realistic; the annotation, such as optical ﬂow of the source video is preserved in the transformed video, and it is robust to noise. The model uses a cycle-consistent structure and optical ﬂow for both spatial and temporal consistency via adversarial training. We demonstrate that the performance of our OfGAN overwhelms the baseline method in relative tasks through both qualitative and quantitative evaluation.</p></div>
+			</div>
+			<div class='row project-description'>
+				<div class="col">
+					<div style="display:flex; justify-content:center">
+						<video width="50%" style="margin-top:50px;" controls>
+							<source src="../static/output.mp4" type="video/mp4">
+						</video>
+					</div>
+
+						<h4> Everything in a word</h4>
+						<p> <b>What's the problem:</b> high-quality labelled medical dataset is relatively hard to be obtained. However, generating synthetic data with labels are much easier. Therefore, if we can transform the synthetic data into realistic ones meanwhile keep the annotation unchanged, we will have much better labelled "real" datasets. Our paper applies this idea on colonoscopy data.</p>
+						<p> <b>What's the task:</b> the task is more relevant to unpaired video-to-video translation on medical image. Given a sequence of frames in the source domain (synthetic), the model should outputs a corresponding sequence of frame and each of the output frame belongs to the target domain (real). More importantly, outputs must possess similar annotations (optical flows) with inputs. Besides, for training dataset, we have synthetic videos with labels and unpaired unlabeled real videos. </p>
+						<p> <b>How to achieve this:</b> We use Generative Adversarial Network (GAN) as our fundation and acquire the idea of <a href="https://junyanz.github.io/CycleGAN/ ">CycleGAN</a>. In term of the innovation, we introduce two-fold optical flows into the model. One is explicit, which appears in the <b>optical flow loss</b>. The other one is implicit, which is internalized in our <b>temporal cycle struture</b>.</p>
+						<p> <b>Evaluation:</b> We use qualitative evaluation to judge if the transformed videos are much more real (domain-transformed)and coherent (temporal-consistent) than the output from the baseline (CycleGAN). Moreover, we utilize an auxiliary metric for quantifying the spatial and temporal improvement.</p>
+						<h4> Methodology</h4>
+						<div style="display:flex; justify-content:center"><img width="50%" src="../static/img/OfGAN_model.png"/></div>
+						<ul>
+							<li> <b>Temporal Cycle Structure</b></li>
+							<p> It is known that, CycleGAN uses reconstruction loss to constrain the generation of both generators. Here we not only need this loss, but amend it by the following mapping chain (forward cycle):  
+								$$S_n \stackrel{G_{flow}}{\longrightarrow} R^\prime_{n+1} \stackrel{G_{self}}{\longrightarrow} S^{rec}_{n+1}$$
+							where the subscript indicates the number of continuous frames, prime indicates "transformed", "rec" indicates "reconstructed". Thus, the generator \( G_{flow}\) has to predict the next frame meanwhile doing the domain transformation. The backward cycle obeies a reserves mapping which we will not mention again. Note that, simply introducing this structure will dramatically deteriorate training. Hence, we also force it to learn the optical flow in between.</p>
+							<li> <b>Optical Flow Loss</b></li>
+							<p> Synthetic videos usually obey the three asumptions of Lucas-Kanade algorithm. Besides, if we keep the parameter, such as the speed of camera movement, unchanged, it is possible to learn and generalize the optical flow of the whole generations (Note that the "generation" is for synthetic version, we use "tranformation" for our output.) Based on the above intuition, we force the \( G_{flow}\) to learn the underlying optical flow so that we have \( f^\prime_{n, n+1} \approx f_{n, n+1}\) where \(f_{n, n+1}\) means the optical flow between the n-th frame and n+1-th frame and \(f^\prime\), same as above, is the optical flow of the transformed version. Since it learns the underlying optical flow, it will be much easier to predict the next frame. </p>
+							<p> For other losses, which are not such innovative, please refer to our paper.</p>
+						</ul>
+						<h4> Evaluations</h4>
+						<div style="display:flex; justify-content:center"><img width=80% src="../static/OfGAN_evaluation.gif"/> </div>
+						<p> <b>Qualitative:</b> we use two datasets, our synthetic and real colonoscopy dataset and a <a href="http://cmic.cs.ucl.ac.uk/ColonoscopyDepth/">public CT dataset</a>(no GT optical flow). Based on our ablation study(from above gif), it is observable that adding optical flow lose successfully reduces the noise, but does not enhance the realism. Besides, only use temporal cycle structure makes the transformation even worse, as the training becomes much more harder.  Finally, from the vivid wall color and the smooth movement, we can conclude that our OfGAN works and performs much better on both domain transformation and temporal consistency.</p>
+						<p><b>Quantitative:</b> we have to double claim that spatial and temporal performance are indivisible. As a result, the spatial and temporal dimension must be considered simultaneously. An auxiliary metric, which combines several existing metrics (AEPEs, perceptual loss and style loss), are required. Moreover, we use EPE towards ground truth and predicted optical flow for measuring the temporal consistency, as the given synthetic video is consistent. We use perceptual loss and style loss for measuring the domain distance and spatial quality. More details please refer to our paper.</p>
+						<h4> Limitations</h4>
+						<p> To generate realism dataset, we only need to train our model once on the specific synthetic dataset. Then the model can generalize all output of the synthetic generator and transform them properly to real domain. However, as our target data type is video, we cannot ensure that all tranformed frames are successful (a very small amount of them may contains big white-spot). But once the flaw emerges, to still form a video, we have to cut it and spread it into two. As a result, generating high-quality very long video will be hard. Besides, we only verify the success of our model on two types of colonoscopy dataset, there are still a long trip to test the model.</p>
+						<h4> Code</h4>
+						<p> The code is confidential due to CSIRO policy. But, as there is no novel network structure, it is easy to reimplement. Welcome to contact me if you have problems.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+</body>
+</html>
+
+
