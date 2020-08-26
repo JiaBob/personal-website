@@ -136,4 +136,11 @@ div#project img, div#project video{
 	margin-bottom: 50px;
 }
 
+    
+@media screen and (max-width: 576px) {
+	#personal-info {
+        display:flex;
+		justify-content:center;
+    }
+}
 
