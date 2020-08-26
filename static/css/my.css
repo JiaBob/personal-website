@@ -4,7 +4,6 @@ body {
 	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
 	border:0;
 	padding:0;
-	text-align:justify;
 }
 
 body.inner{
@@ -14,15 +13,7 @@ body.inner{
 	border:0;
 	padding:0;
 }
-nav a {
-	color: black;
-}
-nav a:hover{
-	color: black
-}
-nav a:visited {
-	color: var(--a_color);
-}
+
 
 
 
@@ -35,11 +26,10 @@ main{
 }
 .section{
 	margin-bottom: 30px;
-}
-#personal-info{
 	margin-left: var(--maring-left);
 	margin-right: var(--maring-right);
 }
+
 div#index-figure{
 }
 div#index-figure img{
@@ -61,18 +51,15 @@ div#publication img{
 }
 div#news{
 	flex-direction: column;
-	margin-left: var(--maring-left);
-	margin-right: var(--maring-right);
-
 }
+
 div#news ul{
 	list-style-type:none;
 }
 div#publication{
 	flex-direction: column;
-	margin-left: var(--maring-left);
-	margin-right: var(--maring-right);
 }
+
 div#publication button{
 	padding: 0 5px 0 5px;
 	margin-top: 8px;
@@ -90,11 +77,11 @@ div#publication button#read-more{
 	margin-right:40px;
 }
 button {
-	background-color: var(--button-background-color) !important;
-	color: var(--button-font-color) !important;
 	padding: 1px 5px 1px 5px !important;
 }
-
+img {
+	border-radius: 5px;
+}
 p.abstract{
 	margin-bottom: 5px;
 	word-break:break-all;
@@ -114,7 +101,7 @@ div#project div.paper-info{
 	justify-content: center;
 }
 div#project div.title{
-	margin-bottom: 15px;
+	margin: 0 10px 15px 10px;
 }
 div#project div.download-paper{
 	width:100%; 
@@ -126,6 +113,8 @@ div#project div.download-paper button{
 	width:190px;
 	height: 35px;
 	padding: 1px 4px 1px 4px;
+	background-color: var(--button-background-color);
+	color: var(--button-font-color);
 }
 div#project div.download-paper button img{
 	width:8%;
@@ -147,49 +136,4 @@ div#project img, div#project video{
 	margin-bottom: 50px;
 }
 
-
-/* CSS for '/content/*.html' */
-/* navigation bar*/
-/* nav bar overall setting*/
-nav.top {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 0;
-	border: 0;
-	width: 100%;
-	height: var(--nav-height);
-	background-color: var(--nav_background_color);
-	position: fixed;
-	top: 0;
-	z-index:10;
-}
-
-nav.top a{
-	padding: 11px 16px;
-}
-
-/* link hover style (to override the overall setting)*/
-nav.top a:hover{
-	background-color: var(--nav_hover_color);
-	border-bottom: none;
-	text-decoration: none;
-}
-
-/* nav bar main menu (left part of it)*/
-nav.top ul{
-	display: flex;
-	margin:0;  /* this line is very important. there is a default bottom margin*/
-	list-style-type: none;
-}
-
-/* placeholder (right part of the nav bar) */
-nav.top div#placeholder{
-	flex-grow: 6;
-	display: flex;
-	justify-content: flex-end;
-}
-nav.top div#placeholder a:hover{
-	background-color: transparent;
-}
 

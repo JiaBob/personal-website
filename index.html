@@ -22,49 +22,49 @@
 <body>
 
 <!-- nav bar/ -->
-<nav class="top">
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#publication">Publication</a></li>
-<li><a href="#publication">Project</a></li>
-<li><a href="#presentation">Presentation</a></li>
-
-<!-- use href='#' to activate it and avoid refreshing page-->
-</ul>
-<div id="placeholder">
-	<ul>
-		<li>
-			<a href="https://github.com/JiaBob" target="_blank"><img src="./static/img/github-brands.svg" style="margin-right:20px"></a>
-		</li>
-	</ul>
-
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Jiabo Xu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#publication">Publication</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#talk">Talk</a>
+      </li>
+    </ul>
+  </div>
 </nav>
-<!-- /nav bar -->
+
+
 
 <main>
 <div class="container">
 	<div class="row section" id="personal-info"> 
-		<div class="col col-lg-3 col-md-4 col-sm-5 col-5" id="index-figure">
+		<div class="col col-lg-3 col-md-4 col-sm-6 col-6" id="index-figure">
 			<div class="row"> 
 				<img src="./static/img/Myhead.png" alt="Jiabo.Xu"/>
 			</div>
 			<div class="row" id='contact-info'> 
-				<div class="col" style="font-size:0.9em;">
-					<ul>
-						<li> Email: <a href="mailto:jiabo.xu@foxmail.com" style="color:black">jiabo.xu@foxmail.com</a></li>
-						<li> Phone: (+86)13153020135</li>		
-						<li> Address: Jinan, Shandong, China</li>						
-					</ul>
-				</div>
+				<ul>
+					<li> Email: <a href="mailto:jiabo.xu@foxmail.com" style="color:black">jiabo.xu@foxmail.com</a></li>
+					<li> Phone: (+86)13153020135</li>		
+					<li> Address: Jinan, Shandong, China</li>						
+				</ul>
 			</div>
 		</div>
 		<div class="col col-lg-9 col-md-auto col-sm-auto col-auto" id="index-introduction">
 			<div class="row"> 
+				<h1 style="font-family:'STKaiti'"> Jiabo Xu 许家博</h1>
 				<p> My Master degree is in Computer Science, speciallizing in AI, from the <a href='https://www.anu.edu.au/' target='_blank'>Australia National University</a>. My Bachelor of Computing degree is from <a href="http://www.ipm.edu.mo/en/index.php" target='_blank'>Macao Polytechnic Institute</a>. When I was year-4, I served as the student group leader in <a href="http://cpelab.ipm.edu.mo/index_cn.php", target='_blank'>CPE Machine Translation Laboratory</a>, focusing on Text Mining and website development. During my postgraduate period, I have done researchs in <a href='https://data61.csiro.au/' target='_blank'>Data61, CSIRO</a> for around 9 months. Since then, my reasearch focus has become Computer Vision, especially generative models. </p>
 				<p> My research passion is applying Generative Adversarial Networks (GANs) for Large-Scale 3D Modeling. I have research experiences in Medical Image, GAN, Domain Adaptation and Video-to-video Translation. Besides, I am also willing to study other Computer Vision problems.</p>
 				<p> I am familiar with Python, Pytorch and Slurm(cluster). My technical interests include Web Technologies and IOT. As for other hobbies, I like Go, photography, jog, ping-pong and video games.</p>
-				<p> <font color="red">I am looking for a Phd position around the world!</font></p>
 			</div>
 		</div>
 	</div>
@@ -96,12 +96,12 @@
 				<hr style="width:100%">
 			</div>
 			<div class="row"> 
-				<div class="col col-lg-4 col-md-4 col-sm-5 col-5">
+				<div class="col col-lg-4 col-md-4 col-sm-10 col-5">
 					<div class="row publication-figure"> 
 						<img src="./static/img/OfGAN.png" alt="OfGAN"/>
 					</div>
 					<div class="row publication-link"> 
-						<p><a href="./static/paper719.pdf"><button type="button" class="btn btn-light">Paper</button></a> <a href="./project/OfGAN.html"><button type="button" class="btn btn-light">Project</button></a></p>
+						<p><a href="./static/paper719.pdf"><button type="button" class="btn btn-link">[Paper]</button></a> <a href="./project/OfGAN.html"><button type="button" class="btn btn-link">[Project]</button></a></p>
 					</div>	
 				</div>
 				<div class="col col-lg-8 col-md-auto col-sm-auto col-auto">
@@ -110,7 +110,7 @@
 						<p><b>Xu, J.</b>, Anwar S., Barnes N., Grimpen, F., Salvado, O., Anderson, S. Mohammad, A. (2020).  In International Conference on Medical image computing and computer-assisted intervention(MICCAI)</p>
 						<div class="abstract">
 							<p class="abstract" id="abstract"><i>Abstract:</i> Data-driven methods usually require a large amount of labelled data for training and generalization, especially in medical imaging. Targeting the colonoscopy ﬁeld, we develop the Optical Flow Generative Adversarial Network (OfGAN) to transform simulated colonoscopy videos into realistic ones while preserving annotation. The advantages of our method are three-fold: the transformed videos are visually much more realistic; the annotation, such as optical ﬂow of the source video is preserved in the transformed video, and it is robust to noise. The model uses a cycle-consistent structure and optical ﬂow for both spatial and temporal consistency via adversarial training. We demonstrate that the performance of our OfGAN overwhelms the baseline method in relative tasks through both qualitative and quantitative evaluation.</p>
-							<button type="button" class="btn btn-light" id='read-more' onclick="show(this)">More</button>
+							<button type="button" class="btn btn-link" id='read-more' onclick="show(this)">More</button>
 						</div>
 					</div>
 				</div>
@@ -120,16 +120,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="row section" id="presentation">
+	<div class="row section" id="talk">
 		<div class='col-12'>
 			<div class="row" style="flex-direction:column">
-				<h3>Presentations</h3>
+				<h3>Talks</h3>
 				<hr style="width:100%">
 			</div>
 			<div class="row"> 
 				<ul>
-					<li> [2020/10] Presentation on MICCAI 2020 about our paper: "OfGAN: Realistic Rendition of Synthetic Colonoscopy Videos". <a href="javascript:void(0);"><button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Coming soon">Slides</button></a></li>
-					<li> [2019/12] Presentation on Data61, CSIRO reading group: "Introduction to video-to-video translation with Medical Image". <a href="./static/ReadingGroup_JiaboXu.ppf"><button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Pdf version no gif">Slides</button></a></li>
+					<li> [2020/10] Presentation on MICCAI 2020 about our paper: "OfGAN: Realistic Rendition of Synthetic Colonoscopy Videos". <a href="javascript:void(0);"><button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Coming soon">[Slides]</button></a></li>
+					<li> [2019/12] Presentation on Data61, CSIRO reading group: "Introduction to video-to-video translation with Medical Image". <a href="./static/ReadingGroup_JiaboXu.ppf"><button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Pdf version no gif">[Slides]</button></a></li>
 				</ul>
 				<br/>
 				<br/>
