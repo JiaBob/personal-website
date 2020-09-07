@@ -8,7 +8,6 @@ body {
 
 body.inner{
 	display: flex;
-	flex-direction: column;
 	margin:0; /* attribute like the margin:0 border:0 and display:flex are already set by bootstap*/
 	border:0;
 	padding:0;
@@ -49,15 +48,10 @@ div#publication img{
 	margin-left: -40px;
 	font-size: 0.9em;
 }
-div#news{
-	flex-direction: column;
-}
+
 
 div#news ul{
 	list-style-type:none;
-}
-div#publication{
-	flex-direction: column;
 }
 
 div#publication button{

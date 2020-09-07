@@ -61,7 +61,7 @@
 			</div>
 			<div class='row project-description'>
 				<div class="col">
-					<div style="display:flex; justify-content:center">
+					<div style="display:flex;">
 						<video width="50%" controls>
 							<source src="../static/OfGAN.mp4" type="video/mp4">
 						</video>
@@ -74,7 +74,7 @@
 						<p> <b>Evaluation:</b> We use qualitative evaluation to judge if the transformed videos are much more real (domain-transformed)and coherent (temporal-consistent) than the output from the baseline (CycleGAN). Moreover, we utilize an auxiliary metric for quantifying the spatial and temporal improvement.</p>
 						</br>
 						<h4> Methodology</h4>
-						<div style="display:flex; justify-content:center"><img width="50%" src="../static/img/OfGAN_model.svg"/></div>
+						<div style="display:flex;"><img width="50%" src="../static/img/OfGAN_model.svg"/></div>
 						<ul>
 							<li> <b>Temporal Cycle Structure</b></li>
 							<p> It is known that, CycleGAN uses reconstruction loss to constrain the generation of both generators. Here we extent it by the following mapping chain (forward cycle):  
@@ -86,7 +86,7 @@
 						</ul>
 						</br>
 						<h4> Evaluations</h4>
-						<div style="display:flex; justify-content:center"><img width=80% src="../static/OfGAN_evaluation.gif"/> </div>
+						<div style="display:flex;"><img width=80% src="../static/OfGAN_evaluation.gif"/> </div>
 						<p> <b>Qualitative:</b> we use two datasets, our synthetic and real colonoscopy dataset and a <a href="http://cmic.cs.ucl.ac.uk/ColonoscopyDepth/">public CT dataset</a>(no GT optical flow). Based on our ablation study(from above gif), it is observable that adding optical flow lose successfully reduces the noise, but does not enhance the realism. Besides, only use temporal cycle structure makes the transformation even worse, as the training becomes much more harder.  Finally, from the vivid wall color and the smooth movement, we can conclude that our OfGAN works and performs much better on both domain transformation and temporal consistency.</p>
 						<p><b>Quantitative:</b> we have to double claim that spatial and temporal performance are indivisible. As a result, the spatial and temporal dimension must be considered simultaneously. An auxiliary metric, which combines several existing metrics (AEPEs, perceptual loss and style loss), are required. Moreover, we use EPE towards ground truth and predicted optical flow for measuring the temporal consistency, as the given synthetic video is consistent. We use perceptual loss and style loss for measuring the domain distance and spatial quality. More details please refer to our paper.</p>
 						</br>
@@ -97,7 +97,7 @@
 							<li> Robust: rarely need manual cleaning on generated dataset. </li>
 						</ul>
 						<h4> Limitations</h4>
-						<div style="display:flex; justify-content:center"><img width=80% src="../static/OfGAN_generalization.gif"/> </div>
+						<div style="display:flex;"><img width=80% src="../static/OfGAN_generalization.gif"/> </div>
 						<p> To generate realism dataset, we only need to train our model once on the specific synthetic dataset. Then the model can generalize all output of the synthetic generator and transform them properly to the real domain. However, as our target data type is video, we cannot ensure that all tranformed frames are successful. A very small amount of them may contains big white-spot. But once the flaw emerges, to still form a video, we have to cut it and separate it into two. As a result, generating high-quality very long video will be hard. Besides, we only verify the success of our model on two types of colonoscopy dataset, there are still a long trip for verifying the model.</p>
 						</br>
 						<h4> Code</h4>
